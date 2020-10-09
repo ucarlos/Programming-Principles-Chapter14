@@ -28,7 +28,7 @@ However, if you can't compile with compile_fltk, you may need to do the followin
     fltk-config --cxxflags
     ```
 
-2.  Using g++,  Include the fltk-images library by doing -lfltk<sub>images</sub>
+2.  Using g++,  Include the fltk-images library by doing -lfltk_images
 
 3.  (OPTIONAL?) Include the local GUI library by doing -I./GUI
 
