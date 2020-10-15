@@ -1,0 +1,78 @@
+#+title: Chapter 14 Review
+#+author: Ulysses Carlos
+#+date: <2020-09-24 Thu>
+#+OPTIONS: toc:nil
+#+latex_class_options: [12pt]
+#+LaTeX_HEADER: \usepackage[T1]{fontenc}
+#+LaTeX_HEADER: \usepackage{mathpazo}
+#+LaTeX_HEADER: \linespread{1.05}
+#+LaTeX_HEADER: \usepackage[scaled]{helvet}
+#+LaTeX_HEADER: \usepackage{courier}
+# ------------------------------------------------------------------------------
+# HTML
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/setup/theme-readtheorg.setup
+#+HTML_HEAD: <style>#content{max-width:1000px;}</style>
+#+HTML_HEAD: <style>p{max-width:800px;}</style>
+#+HTML_HEAD: <style>li{max-width:800px;}</style>
+# ------------------------------------------------------------------------------
+* Questions
+** What is an application domain?
+An Application domain is the environment in which an application is developed
+towards.
+** What are ideals for naming?
+I suppose that the ideals are that the names can show that the classes are related to or are deviated from one another (For example, a class circle is derived from a base class Shape).
+** What can we name?
+We can name Base and derived classes, functions, function parameters, the name of function parameters.
+** What services does a Shape offer?
+The class *Shape* offers the ability to get and set the following:
+- Line and Fill Color
+- Line thickness
+- Points
+The class also allows the user to write their own draw\textunderscore lines functions for derived classes of Shape.    
+** How does an abstract class differ from a class that is not abstract?
+An abstract differs from a non-abstract class in that an object of an abstract class cannot be created. It declares member functions that have to be defined by its derived classes.
+** How can you make a class abstract?
+You can make a class abstract by defining one of its *virtual* function in this format (*=0*) :
+#+begin_src c++
+void function() =0;
+#+end_src
+You can also define its constructor under the *protected* portion of the class to achieve the same effect.
+** What is controlled by access control?
+Whether certain functions or variables can be accessed by everyone, member functions of that class, and member functions from derived classes.
+** What good can it do to make a data member *private* ?
+It provides a method of encapsulation, which prevents direct access of a variable. The variable can still be accessed through public member functions that hide the implementation of that variable.
+** What is a *virtual* function and how does it differ from a non-virtual function?
+A *virtual* function is a function that may be overwritten by a derived class. The virtual function in the derived class must have the same return type, name, and function parameters as the base class.
+
+While non-virtual functions can be overwritten as well, a virtual function can prevented from being overwritten through the *final* keyword.
+** What is a base class?
+A base class is a class whose functions and variables can be inherited by a derived class (Depending on the type of inheritance). It provides the foundations for a hierarchy to form around the class.
+** What makes a class derived?
+A Derived class is a class the inherits functions and variables from a specified base class.
+** What do we mean by object layout?
+Object layout is how the object is laid out in memory.
+** What can you do to make a class easier to test?
+On the class level, you can encapsulate data variables to prevent against invalid input and to allow a variable to be changed in a easier manner. You can also create a class hierarchy, which could determine if an error occurred in a derived class or in the base class.
+** What is an inheritance diagram?
+An inheritance diagram is a diagram showing the relationship between a base class and its derived class, showing which classes are derived from which.
+** What is the difference between a *protected* member and a *private* one?
+- *protected*: Can be accessed by member functions of a class and member functions of any derived class
+- *private*: Can only be accessed by member functions of a class.
+** What members of a class can be accessed from a class derived from it?
+It depends on what type of modified is applied on the base class.
+- If the base class is *public* or if the derived class is a *struct*, then all *public* member functions of the base classes can be used in the derived class.
+- If the base class is *protected*, then its *public* and *protected* member functions can be only be used by member functions of the derived class and any classes derived from it.
+- If the base class is *private*, then only its *public* and *protected* member functions can be used by member functions of the derived class.
+** How does a pure virtual function differ from other virtual functions?
+A pure virtual function must be overwritten in a derived class as the class is now defined as abstract.
+** How would you make a member function virtual?
+By using the *virtual* modifier on a member function.
+** Why would you make a virtual function pure?
+You would want to make a pure virtual function if you want to make the class a abstract class.
+** What does overriding mean?
+Overriding means that a derived class can change the definition of a member function in a base class. When the derived class calls the function, it will use the definition used by the derived class rather than that of the base class.
+** How does *interface inheritance* differ from *implementation inheritance*?
+- *Interface inheritance*: A derived class can be used in a function where a base class is taken as a function parameter, allowing operations to be done by both a bass class and its derived classes.
+- *Implementation inheritance*: A derived class can take advantage of the variables and member functions of its base classes.
+** What is object-oriented programming?
+Object-oriented programming is a programming paradigm that makes the use of class inheritance, run-time polymorphism and encapsulation to solve problems.
