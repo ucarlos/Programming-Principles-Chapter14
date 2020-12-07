@@ -22,13 +22,13 @@ public:
 
 void Striped_Rectangle::draw_lines() const {
     if (fill_color().visibility()) {
-	// Draw the normal rectangle first:
-	fl_rect(point(0).x, point(0).y, width(), height());
+		// Draw the normal rectangle first:
+		fl_rect(point(0).x, point(0).y, width(), height());
 
         // Now Draw the striped rectangle:
-	fl_color(fill_color().as_int());
-	for (int i = 0; i < height(); i += 10)
-	    fl_rect(point(0).x, point(0).y + i, width(), 1);
+		fl_color(fill_color().as_int());
+		for (int i = 0; i < height(); i += 10)
+			fl_rect(point(0).x, point(0).y + i, width(), 1);
 
     }
 

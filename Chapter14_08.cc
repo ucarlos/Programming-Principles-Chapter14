@@ -30,7 +30,7 @@ void Octagon::draw_lines() const {
 
     double x, y, xx, yy;
     if (color().visibility()) {
-	fl_color(color().as_int());
+		fl_color(color().as_int());
 
     }
        
@@ -39,23 +39,23 @@ void Octagon::draw_lines() const {
 
     // Draw the first line
     fl_line(center.x + radius, center.y,
-	    center.x + x, center.y + y);
+			center.x + x, center.y + y);
 	
     // For the next lines:
     for (int i = 1; i < 7; i++){
-	xx = radius * cos((i + 1) * angle_radian);
-	yy = radius * sin((i + 1) * angle_radian);
+		xx = radius * cos((i + 1) * angle_radian);
+		yy = radius * sin((i + 1) * angle_radian);
 	
-	fl_line(center.x + x, center.y + y,
-		center.x + xx, center.y + yy);
+		fl_line(center.x + x, center.y + y,
+				center.x + xx, center.y + yy);
 
-	// Now update x and y for the next angle:
-	x = xx; y = yy;
+		// Now update x and y for the next angle:
+		x = xx; y = yy;
     }
 	
     // Now connect the first and last line:
     fl_line(center.x + x, center.y + y,
-	    center.x + radius, center.y);    
+			center.x + radius, center.y);    
 
     
 }

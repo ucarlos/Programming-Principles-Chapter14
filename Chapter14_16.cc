@@ -21,7 +21,7 @@ class Controller {
 public:
     Controller() =default;
     Controller(bool c_s, unsigned lvl) :
-	controller_status{c_s}, level{lvl} { }
+		controller_status{c_s}, level{lvl} { }
     void on() { controller_status = true; }
     void off() { controller_status = false; }
     bool get_status() const { return controller_status; }
@@ -40,10 +40,10 @@ struct TestController : Controller {
 
 void TestController::show() const {
     std::cout << "Controller: "
-	      << (get_status()? "On" : "Off") << "\n"
-	      << "Level: " << get_level()
-	      << std::endl;
-	      
+			  << (get_status()? "On" : "Off") << "\n"
+			  << "Level: " << get_level()
+			  << std::endl;
+	
 }
 
 

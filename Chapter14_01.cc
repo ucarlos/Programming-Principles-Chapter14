@@ -31,7 +31,7 @@ void Smiley::draw_lines() const {
 
     // Now Draw the mouth
     fl_arc(point(0).x + radius() / 2, point(0).y + radius() / 2,
-	   radius(), radius(), 180, 360);
+		   radius(), radius(), 180, 360);
 }
 
 
@@ -54,7 +54,7 @@ void Frowny::draw_lines() const {
 
     // Now Draw the mouth
     fl_arc(point(0).x + radius() / 2, point(0).y + radius(),
-	   radius(), radius(), 0, 180);
+		   radius(), radius(), 0, 180);
 }
 
 struct HatSmiley : Smiley {
@@ -68,7 +68,7 @@ void HatSmiley::draw_lines() const {
     // Now draw a hat on top of Smiley:
     // Point(0).x + radius() / 4, Point(0).y - radius() / 4
     fl_rect(point(0).x + 4 * radius() / 8, point(0).y - radius() / 2,
-	    radius(), radius() / 2);
+			radius(), radius() / 2);
 }
 
 struct HatFrowny : Frowny {
@@ -81,7 +81,7 @@ void HatFrowny::draw_lines() const {
 
     // Now draw a hat on top of Smiley:
     fl_rect(point(0).x + 4 * radius() / 8, point(0).y - radius() / 2,
-	    radius(), radius() / 2);    
+			radius(), radius() / 2);    
 }
 
 

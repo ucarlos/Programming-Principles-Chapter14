@@ -29,22 +29,22 @@ void Striped_Circle::draw_lines() const {
     Circle::draw_lines(); // Call Circle's draw_lines
     if (fill_color().visibility()) {
 
-	int x, y, xx, yy;
+		int x, y, xx, yy;
 
-	fl_color(fill_color().as_int()); // Set color:
-	// For each degree of a semi-circle:
-	double radian = M_PI / 180;
-	int width;
-	for (int i = 0; i < 180; i += 4){
-	    x = center().x + radius() * cos(radian * (90 + i));
-	    y = center().y + radius() * sin(radian * (90 + i));
+		fl_color(fill_color().as_int()); // Set color:
+		// For each degree of a semi-circle:
+		double radian = M_PI / 180;
+		int width;
+		for (int i = 0; i < 180; i += 4){
+			x = center().x + radius() * cos(radian * (90 + i));
+			y = center().y + radius() * sin(radian * (90 + i));
 
-	    xx = center().x + radius() * cos(radian * (90 - i));
-	    yy = center().y + radius() * sin(radian * (90 - i));
+			xx = center().x + radius() * cos(radian * (90 - i));
+			yy = center().y + radius() * sin(radian * (90 - i));
 
-	    width = distance(x, y, xx, yy);
-	    fl_rect(x, y, width, 1);
-	}
+			width = distance(x, y, xx, yy);
+			fl_rect(x, y, width, 1);
+		}
 	
 
     }
